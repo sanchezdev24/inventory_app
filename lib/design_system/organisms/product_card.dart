@@ -76,26 +76,25 @@ class ProductCard extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
                 AppSpacing.gapVerticalSm,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Precio
                     AppPriceBadge(price: product.price),
+                    AppSpacing.gapVerticalXs,
+                    // Rating
                     Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         const Icon(
                           Icons.star,
-                          size: 16,
+                          size: 14,
                           color: AppColors.tertiary,
                         ),
-                        AppSpacing.gapHorizontalXs,
+                        const SizedBox(width: 4),
                         AppText.labelSmall(
-                          product.rating.rate.toStringAsFixed(1),
+                          '${product.rating.rate.toStringAsFixed(1)} (${product.rating.count})',
                           color: AppColors.neutral600,
-                        ),
-                        AppSpacing.gapHorizontalXs,
-                        AppText.labelSmall(
-                          '(${product.rating.count})',
-                          color: AppColors.neutral400,
                         ),
                       ],
                     ),
