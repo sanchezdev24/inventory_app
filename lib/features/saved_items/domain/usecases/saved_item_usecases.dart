@@ -64,3 +64,15 @@ class DeleteItem implements UseCase<void, String> {
     return repository.deleteItem(id);
   }
 }
+
+/// Check if product is saved use case
+class IsProductSaved implements UseCase<bool, int> {
+  final SavedItemRepository repository;
+
+  IsProductSaved(this.repository);
+
+  @override
+  Future<Either<Failure, bool>> call(int productId) {
+    return repository.isProductSaved(productId);
+  }
+}

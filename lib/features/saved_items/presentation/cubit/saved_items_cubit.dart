@@ -5,7 +5,7 @@ import '../../domain/entities/saved_item_entity.dart';
 import '../../domain/usecases/saved_item_usecases.dart';
 import 'saved_items_state.dart';
 
-/// Cubit for managing saved items (preferences)
+/// Cubit for managing saved items using Native Storage
 class SavedItemsCubit extends Cubit<SavedItemsState> {
   final GetSavedItems getSavedItems;
   final GetSavedItemById getSavedItemById;
@@ -21,7 +21,7 @@ class SavedItemsCubit extends Cubit<SavedItemsState> {
     required this.deleteItem,
   }) : super(const SavedItemsInitial());
 
-  /// Load all saved items
+  /// Load all saved items from native storage
   Future<void> loadSavedItems() async {
     emit(const SavedItemsLoading());
 
