@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import '../../../../core/error/failures.dart';
 import '../entities/saved_item_entity.dart';
 
-/// Abstract repository for saved items
+/// Abstract repository for saved items (Native Storage)
 abstract class SavedItemRepository {
   /// Get all saved items
   Future<Either<Failure, List<SavedItemEntity>>> getSavedItems();
